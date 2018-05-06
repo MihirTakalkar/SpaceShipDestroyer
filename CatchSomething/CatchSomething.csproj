@@ -109,5 +109,32 @@
   <ItemGroup>
     <None Include="Resources\blog_test_background_bright.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Portal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpaceShip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpaceShip1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
