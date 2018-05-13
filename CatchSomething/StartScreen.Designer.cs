@@ -31,7 +31,7 @@
             this.Title = new System.Windows.Forms.Label();
             this.PlayButton = new System.Windows.Forms.Button();
             this.QuitButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Description = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Title
@@ -75,17 +75,17 @@
             this.QuitButton.Text = "Quit";
             this.QuitButton.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // Description
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Pericles", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(48, 203);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Eliminate Spaceships Using Your Portal";
+            this.Description.AutoSize = true;
+            this.Description.BackColor = System.Drawing.Color.Transparent;
+            this.Description.Font = new System.Drawing.Font("Pericles", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.ForeColor = System.Drawing.Color.White;
+            this.Description.Location = new System.Drawing.Point(48, 203);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(283, 17);
+            this.Description.TabIndex = 3;
+            this.Description.Text = "Eliminate Spaceships Using Your Portal";
             // 
             // StartScreen
             // 
@@ -94,12 +94,13 @@
             this.BackgroundImage = global::CatchSomething.Properties.Resources.Background3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Description);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.Title);
             this.Name = "StartScreen";
             this.Text = "StartScreen";
+            this.Load += new System.EventHandler(this.StartScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,6 +111,6 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button PlayButton;
         private System.Windows.Forms.Button QuitButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Description;
     }
 }

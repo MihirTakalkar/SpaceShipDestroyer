@@ -30,8 +30,8 @@
         {
             this.Title = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.Button();
-            this.PlayButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.RestartButton = new System.Windows.Forms.Button();
+            this.Description = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Title
@@ -61,31 +61,31 @@
             this.QuitButton.Text = "Quit";
             this.QuitButton.UseVisualStyleBackColor = false;
             // 
-            // PlayButton
+            // RestartButton
             // 
-            this.PlayButton.BackColor = System.Drawing.Color.Transparent;
-            this.PlayButton.FlatAppearance.BorderSize = 0;
-            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PlayButton.Font = new System.Drawing.Font("Pericles", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayButton.ForeColor = System.Drawing.Color.Lime;
-            this.PlayButton.Location = new System.Drawing.Point(192, 282);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(146, 40);
-            this.PlayButton.TabIndex = 4;
-            this.PlayButton.Text = "Restart";
-            this.PlayButton.UseVisualStyleBackColor = false;
+            this.RestartButton.BackColor = System.Drawing.Color.Transparent;
+            this.RestartButton.FlatAppearance.BorderSize = 0;
+            this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RestartButton.Font = new System.Drawing.Font("Pericles", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestartButton.ForeColor = System.Drawing.Color.Lime;
+            this.RestartButton.Location = new System.Drawing.Point(192, 282);
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.Size = new System.Drawing.Size(146, 40);
+            this.RestartButton.TabIndex = 4;
+            this.RestartButton.Text = "Restart";
+            this.RestartButton.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // Description
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Pericles", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(128, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 46);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Play Again?\r\n\r\n";
+            this.Description.AutoSize = true;
+            this.Description.BackColor = System.Drawing.Color.Transparent;
+            this.Description.Font = new System.Drawing.Font("Pericles", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.ForeColor = System.Drawing.Color.White;
+            this.Description.Location = new System.Drawing.Point(128, 198);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(129, 46);
+            this.Description.TabIndex = 5;
+            this.Description.Text = "Play Again?\r\n\r\n";
             // 
             // EndScreen
             // 
@@ -94,12 +94,13 @@
             this.BackgroundImage = global::CatchSomething.Properties.Resources.Background3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PlayButton);
+            this.Controls.Add(this.Description);
+            this.Controls.Add(this.RestartButton);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.Title);
             this.Name = "EndScreen";
             this.Text = "EndScreen";
+            this.Load += new System.EventHandler(this.EndScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +110,7 @@
 
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button QuitButton;
-        private System.Windows.Forms.Button PlayButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button RestartButton;
+        private System.Windows.Forms.Label Description;
     }
 }

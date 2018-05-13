@@ -17,5 +17,12 @@ namespace CatchSomething
             InitializeComponent();
         }
 
+        private void StartScreen_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
+
+
+

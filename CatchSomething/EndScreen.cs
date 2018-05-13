@@ -16,5 +16,10 @@ namespace CatchSomething
         {
             InitializeComponent();
         }
+
+        private void EndScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
