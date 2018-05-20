@@ -12,7 +12,10 @@ namespace CatchSomething
         public Image picture;
         int x;
         int y;
+        int width;
+        int height;
         int speedy;
+        Rectangle hitbox;
 
         public SpaceShip(Image picture, int x, int y, int speedy)
         {
@@ -20,11 +23,14 @@ namespace CatchSomething
             this.x = x;
             this.y = y;
             this.speedy = speedy;
+        
+            hitbox = new Rectangle(x, y, width, height);
+            
         }
 
         public void Update()
         {
-
+            y += speedy;
         }
 
         public void Draw(Graphics gfx)

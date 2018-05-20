@@ -13,6 +13,8 @@ namespace CatchSomething
         int x;
         int y;
         int speedx;
+        public bool Left = false;
+        public bool Right = false;
 
         public Portal(Image image, int x, int y, int speedx)
         {
@@ -24,7 +26,23 @@ namespace CatchSomething
 
         public void Update()
         {
+            if (Left == true)
+            {
+                if (x > 0)
+                {
+                    x -= speedx;
+                }
 
+            }
+
+            if (Right == true)
+            {
+                if (x < 830)
+                {
+                    x += speedx;
+                }
+
+            }
         }
 
         public void Draw(Graphics gfx)
