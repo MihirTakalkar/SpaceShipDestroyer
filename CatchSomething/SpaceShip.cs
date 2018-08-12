@@ -25,11 +25,16 @@ namespace CatchSomething
             this.speedy = speedy;
         
             hitbox = new Rectangle(x, y, width, height);
-            
         }
 
         public void Update()
         {
+            hitbox.X = x;
+            hitbox.Y = y;
+            hitbox.Width = picture.Width;
+            hitbox.Height = picture.Height;
+
+
             y += speedy;
         }
 

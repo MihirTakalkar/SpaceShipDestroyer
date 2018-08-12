@@ -13,8 +13,11 @@ namespace CatchSomething
         int x;
         int y;
         int speedx;
+        int width;
+        int height;
         public bool Left = false;
         public bool Right = false;
+        Rectangle hitbox;
 
         public Portal(Image image, int x, int y, int speedx)
         {
@@ -22,13 +25,15 @@ namespace CatchSomething
             this.x = x;
             this.y = y;
             this.speedx = speedx;
+            hitbox = new Rectangle(x, y, width, height);
+            
         }
 
         public void Update()
         {
             if (Left == true)
             {
-                if (x > 0)
+                if (x > 20)
                 {
                     x -= speedx;
                 }
@@ -37,12 +42,17 @@ namespace CatchSomething
 
             if (Right == true)
             {
-                if (x < 830)
+                if (x < 825)
                 {
                     x += speedx;
                 }
 
             }
+
+            hitbox.X = x;
+            hitbox.Y = y;
+            hitbox.Width = image.Width;
+            hitbox.Height = image.Height;
         }
 
         public void Draw(Graphics gfx)

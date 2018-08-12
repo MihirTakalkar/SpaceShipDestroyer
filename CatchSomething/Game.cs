@@ -34,6 +34,7 @@ namespace CatchSomething
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+           
             gfx.Clear(Color.White);
             gfx.DrawImage(Properties.Resources.Background3, 0, 0, ClientSize.Width, ClientSize.Height);
 
