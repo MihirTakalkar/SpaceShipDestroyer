@@ -15,7 +15,7 @@ namespace CatchSomething
         int width;
         int height;
         int speedy;
-        Rectangle hitbox;
+        public Rectangle hitbox { get; set; }
 
         public SpaceShip(Image picture, int x, int y, int speedy)
         {
@@ -29,18 +29,24 @@ namespace CatchSomething
 
         public void Update()
         {
-            hitbox.X = x;
-            hitbox.Y = y;
-            hitbox.Width = picture.Width;
-            hitbox.Height = picture.Height;
-
-
             y += speedy;
+            hitbox = new Rectangle(x,y , picture.Width + 25, picture.Height + 32);
+
+        }
+
+        public void Gethitbox()
+        {
+
         }
 
         public void Draw(Graphics gfx)
         {
+        
             gfx.DrawImage(picture, x, y);
         }
+        //public void drawHitbox(Graphics gfx)
+        //{
+        //    gfx.DrawRectangle(Pens.Gold, hitbox);
+        //}
     }
 }

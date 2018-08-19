@@ -42,12 +42,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::CatchSomething.Properties.Resources.Background3;
+            this.pictureBox1.BackgroundImage = global::CatchSomething.Properties.Resources.wallpaper2you_28630__1_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(984, 561);
+            this.pictureBox1.Size = new System.Drawing.Size(665, 1058);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -56,7 +56,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(665, 1058);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "Game";
