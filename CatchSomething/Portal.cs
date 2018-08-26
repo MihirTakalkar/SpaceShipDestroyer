@@ -49,7 +49,7 @@ namespace CatchSomething
 
             }
 
-            hitbox = new Rectangle(x, y, image.Width + 32, image.Height + 31);
+            hitbox = new Rectangle(x + 10, y + 70, image.Width + 10, image.Height - 30);
             
         }
 
@@ -60,7 +60,7 @@ namespace CatchSomething
 
         //public void DrawHitbox(Graphics gfx)
         //{
-        //    gfx.DrawRectangle(Pens.Gold, hitbox);
+        //   gfx.DrawRectangle(Pens.Gold, hitbox);
         //}
     }
 }

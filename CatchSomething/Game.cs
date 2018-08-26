@@ -21,38 +21,70 @@ namespace CatchSomething
         SpaceShip spaceship;
         Bitmap bitmap;
         Graphics gfx;
+        int score = 0;
+        Random rand;
+        List<SpaceShip> spaceShipList;
 
         private void Game_Load(object sender, EventArgs e)
         {
             bitmap = new Bitmap(pictureBox1.Width,pictureBox1.Height);
             gfx = Graphics.FromImage(bitmap);
-            spaceship = new SpaceShip(Properties.Resources.SpaceShip, 0, 0, 30);
+            spaceShipList = new List<SpaceShip>();
+          
+            spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, 0, 0, 30));
             portal = new Portal(Properties.Resources.Portal, 425, 910, 40);
+            rand = new Random();
             
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void ShipSpawn_Tick(object sender, EventArgs e)
         {
-           
-            if(spaceship.hitbox.IntersectsWith(portal.hitbox))
-            {
-               timer1.Enabled = false;
-                MessageBox.Show("You got the spaceship!");
+            ShipSpawn.Interval = ShipSpawn.Interval - (score / 2 + 10);
+            spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, rand.Next(0,600), 0, 30));
+        }
 
+        private void DrawTimer_Tick(object sender, EventArgs e)
+        {
+            Score.Text = $"Score: {score}";
+
+            for (int i = 0; i < spaceShipList.Count; i++)
+            {
+                if (spaceShipList[i].hitbox.IntersectsWith(portal.hitbox))
+                {
+                    score++;
+                    //remove the spaceship that intersected
+                    spaceShipList.Remove(spaceShipList[i]);
+                    //DrawTimer.Enabled = false;
+
+                }
+            
             }
             gfx.Clear(Color.White);
             gfx.DrawImage(Properties.Resources.wallpaper2you_28630__1_, 0, 0, ClientSize.Width, ClientSize.Height);
 
             portal.Update();
             portal.Draw(gfx);
-           //portal.DrawHitbox(gfx);
+            //portal.DrawHitbox(gfx);
 
-            spaceship.Update();
-            spaceship.Draw(gfx);
-            //spaceship.drawHitbox(gfx);
+            for (int i = 0; i < spaceShipList.Count; i++)
+            {
+                spaceShipList[i].Update();
+            }
+            for (int i = 0; i < spaceShipList.Count ; i++)
+            {
+                spaceShipList[i].Draw(gfx);
+            }
+               for (int i = 0; i < spaceShipList.Count; i++)
+            {
+                spaceShipList[i].Update();
+            }
+           //spaceship.drawHitbox(gfx);
 
             pictureBox1.Image = bitmap;
+        
         }
+
+       
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
@@ -79,5 +111,6 @@ namespace CatchSomething
                 portal.Left = false;
             }
         }
+
     }
 }

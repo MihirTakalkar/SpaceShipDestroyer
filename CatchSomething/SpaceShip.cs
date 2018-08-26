@@ -30,7 +30,7 @@ namespace CatchSomething
         public void Update()
         {
             y += speedy;
-            hitbox = new Rectangle(x,y , picture.Width + 25, picture.Height + 32);
+            hitbox = new Rectangle(x + 10 , y + 10 , picture.Width + 20, picture.Height + 20);
 
         }
 
