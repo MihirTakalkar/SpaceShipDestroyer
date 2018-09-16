@@ -82,6 +82,7 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GameScreen";
             this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);

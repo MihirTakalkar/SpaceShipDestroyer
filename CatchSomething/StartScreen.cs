@@ -21,6 +21,18 @@ namespace CatchSomething
         {
            
         }
+
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Game game = new Game();
+            game.Show();
+        }
+
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

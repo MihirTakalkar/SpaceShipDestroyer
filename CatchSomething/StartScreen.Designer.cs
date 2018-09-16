@@ -60,6 +60,7 @@
             this.PlayButton.TabIndex = 1;
             this.PlayButton.Text = "Play";
             this.PlayButton.UseVisualStyleBackColor = false;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // QuitButton
             // 
@@ -74,6 +75,7 @@
             this.QuitButton.TabIndex = 2;
             this.QuitButton.Text = "Quit";
             this.QuitButton.UseVisualStyleBackColor = false;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // Description
             // 

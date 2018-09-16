@@ -15,6 +15,7 @@ namespace CatchSomething
         public Game()
         {
             InitializeComponent();
+            
         }
 
         Portal portal;
@@ -24,6 +25,9 @@ namespace CatchSomething
         int score = 0;
         Random rand;
         List<SpaceShip> spaceShipList;
+
+        int maxShips = 10;
+
 
         private void Game_Load(object sender, EventArgs e)
         {
@@ -39,12 +43,20 @@ namespace CatchSomething
 
         private void ShipSpawn_Tick(object sender, EventArgs e)
         {
-            ShipSpawn.Interval = ShipSpawn.Interval - (score / 2 + 10);
-            spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, rand.Next(0,600), 0, 30));
+            //if (spaceShipList.Count < maxShips)
+            //{
+            if (ShipSpawn.Interval < 500)
+            {
+                ShipSpawn.Interval = 500;
+            }
+                ShipSpawn.Interval = ShipSpawn.Interval - (score / 2 + 10);
+                spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, rand.Next(0, 600), 0, 30));
+           // }
         }
 
         private void DrawTimer_Tick(object sender, EventArgs e)
         {
+
             Score.Text = $"Score: {score}";
 
             for (int i = 0; i < spaceShipList.Count; i++)
@@ -59,6 +71,7 @@ namespace CatchSomething
                 }
             
             }
+            
             gfx.Clear(Color.White);
             gfx.DrawImage(Properties.Resources.wallpaper2you_28630__1_, 0, 0, ClientSize.Width, ClientSize.Height);
 
