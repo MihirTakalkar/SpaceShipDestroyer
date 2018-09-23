@@ -27,6 +27,7 @@ namespace CatchSomething
         List<SpaceShip> spaceShipList;
 
         int maxShips = 10;
+        int shipsMissed = 0;
 
 
         private void Game_Load(object sender, EventArgs e)
@@ -43,15 +44,14 @@ namespace CatchSomething
 
         private void ShipSpawn_Tick(object sender, EventArgs e)
         {
-            //if (spaceShipList.Count < maxShips)
-            //{
+          
             if (ShipSpawn.Interval < 500)
             {
                 ShipSpawn.Interval = 500;
             }
                 ShipSpawn.Interval = ShipSpawn.Interval - (score / 2 + 10);
                 spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, rand.Next(0, 600), 0, 30));
-           // }
+           
         }
 
         private void DrawTimer_Tick(object sender, EventArgs e)
@@ -64,20 +64,38 @@ namespace CatchSomething
                 if (spaceShipList[i].hitbox.IntersectsWith(portal.hitbox))
                 {
                     score++;
-                    //remove the spaceship that intersected
                     spaceShipList.Remove(spaceShipList[i]);
-                    //DrawTimer.Enabled = false;
+                    continue;
 
+                }
+
+                if (spaceShipList[i].hitbox.Top > bitmap.Height)
+                {
+                    spaceShipList.Remove(spaceShipList[i]);
+                    shipsMissed++;
                 }
             
             }
-            
+
+            Missed.Text = $"Ships Missed: {shipsMissed}";
+
+            if (shipsMissed >= 3)
+            {
+                this.Close();
+                EndScreen screen = new EndScreen();
+                screen.Show();
+            }
+
+
+
+
+
             gfx.Clear(Color.White);
             gfx.DrawImage(Properties.Resources.wallpaper2you_28630__1_, 0, 0, ClientSize.Width, ClientSize.Height);
 
             portal.Update();
             portal.Draw(gfx);
-            //portal.DrawHitbox(gfx);
+            
 
             for (int i = 0; i < spaceShipList.Count; i++)
             {
@@ -91,10 +109,10 @@ namespace CatchSomething
             {
                 spaceShipList[i].Update();
             }
-           //spaceship.drawHitbox(gfx);
+           
 
             pictureBox1.Image = bitmap;
-        
+            
         }
 
        

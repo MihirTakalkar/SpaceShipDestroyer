@@ -21,5 +21,19 @@ namespace CatchSomething
         {
 
         }
+
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            Game game = new Game();
+            game.Show();
+            this.Close();
+
+        }
+
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
     }
 }

@@ -58,9 +58,6 @@ namespace CatchSomething
             gfx.DrawImage(image, x, y);
         }
 
-        //public void DrawHitbox(Graphics gfx)
-        //{
-        //   gfx.DrawRectangle(Pens.Gold, hitbox);
-        //}
+     
     }
 }

@@ -60,6 +60,7 @@
             this.QuitButton.TabIndex = 3;
             this.QuitButton.Text = "Quit";
             this.QuitButton.UseVisualStyleBackColor = false;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // RestartButton
             // 
@@ -74,6 +75,7 @@
             this.RestartButton.TabIndex = 4;
             this.RestartButton.Text = "Restart";
             this.RestartButton.UseVisualStyleBackColor = false;
+            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
             // Description
             // 

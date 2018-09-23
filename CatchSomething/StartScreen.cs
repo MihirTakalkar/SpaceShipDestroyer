@@ -32,6 +32,7 @@ namespace CatchSomething
         private void QuitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
     }
 }
