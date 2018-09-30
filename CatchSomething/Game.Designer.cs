@@ -30,11 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DrawTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Score = new System.Windows.Forms.Label();
             this.ShipSpawn = new System.Windows.Forms.Timer(this.components);
-            this.Missed = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,18 +42,6 @@
             this.DrawTimer.Enabled = true;
             this.DrawTimer.Interval = 2;
             this.DrawTimer.Tick += new System.EventHandler(this.DrawTimer_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::CatchSomething.Properties.Resources.wallpaper2you_28630__1_;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(665, 1058);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Score
             // 
@@ -74,18 +61,6 @@
             this.ShipSpawn.Interval = 2000;
             this.ShipSpawn.Tick += new System.EventHandler(this.ShipSpawn_Tick);
             // 
-            // Missed
-            // 
-            this.Missed.AutoSize = true;
-            this.Missed.BackColor = System.Drawing.Color.Black;
-            this.Missed.Font = new System.Drawing.Font("Pericles", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Missed.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Missed.Location = new System.Drawing.Point(12, 86);
-            this.Missed.Name = "Missed";
-            this.Missed.Size = new System.Drawing.Size(124, 21);
-            this.Missed.TabIndex = 2;
-            this.Missed.Text = "Ships Missed: ";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -98,6 +73,18 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Spaceship\r\nDestroyer";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::CatchSomething.Properties.Resources.wallpaper2you_28630__1_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(665, 1058);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,7 +92,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(665, 1058);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Missed);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
@@ -127,7 +113,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Score;
         private System.Windows.Forms.Timer ShipSpawn;
-        private System.Windows.Forms.Label Missed;
         private System.Windows.Forms.Label label1;
     }
 }

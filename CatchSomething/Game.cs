@@ -20,12 +20,13 @@ namespace CatchSomething
 
         Portal portal;
         SpaceShip spaceship;
+        Powerup powerup;
         Bitmap bitmap;
         Graphics gfx;
         int score = 0;
         Random rand;
         List<SpaceShip> spaceShipList;
-
+        List<Powerup> powerUpList;
         int maxShips = 10;
         int shipsMissed = 0;
 
@@ -35,8 +36,9 @@ namespace CatchSomething
             bitmap = new Bitmap(pictureBox1.Width,pictureBox1.Height);
             gfx = Graphics.FromImage(bitmap);
             spaceShipList = new List<SpaceShip>();
-          
             spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, 0, 0, 30));
+            powerUpList = new List<Powerup>();
+            powerUpList.Add(new Powerup(Properties.Resources.Shield_in_Sonic_Runners, 0, 0, 30));
             portal = new Portal(Properties.Resources.Portal, 425, 910, 40);
             rand = new Random();
             
@@ -76,23 +78,32 @@ namespace CatchSomething
                 }
             
             }
-
-            Missed.Text = $"Ships Missed: {shipsMissed}";
-
+  
             if (shipsMissed >= 3)
             {
                 this.Close();
                 EndScreen screen = new EndScreen();
                 screen.Show();
             }
-
-
-
-
-
             gfx.Clear(Color.White);
             gfx.DrawImage(Properties.Resources.wallpaper2you_28630__1_, 0, 0, ClientSize.Width, ClientSize.Height);
-
+            if (shipsMissed == 0)
+            {
+                gfx.DrawImage(Properties.Resources.heart_sprite_png_4, 16, 102, 47, 33);
+                gfx.DrawImage(Properties.Resources.heart_sprite_png_4, 65, 102, 47, 33);
+                gfx.DrawImage(Properties.Resources.heart_sprite_png_4, 114, 102, 47, 33);
+            }
+            if (shipsMissed == 1)
+            {
+                gfx.DrawImage(Properties.Resources.heart_sprite_png_4, 16, 102, 47, 33);
+                gfx.DrawImage(Properties.Resources.heart_sprite_png_4, 65, 102, 47, 33);
+ 
+            }
+            if (shipsMissed == 2)
+            {
+                gfx.DrawImage(Properties.Resources.heart_sprite_png_4, 16, 102, 47, 33);
+               
+            }
             portal.Update();
             portal.Draw(gfx);
             
@@ -100,10 +111,12 @@ namespace CatchSomething
             for (int i = 0; i < spaceShipList.Count; i++)
             {
                 spaceShipList[i].Update();
+                powerUpList[i].Update();
             }
             for (int i = 0; i < spaceShipList.Count ; i++)
             {
                 spaceShipList[i].Draw(gfx);
+                powerUpList[i].Draw(gfx);
             }
                for (int i = 0; i < spaceShipList.Count; i++)
             {

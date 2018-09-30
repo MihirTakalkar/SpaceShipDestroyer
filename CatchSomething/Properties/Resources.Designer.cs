@@ -113,9 +113,29 @@ namespace CatchSomething.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap heart_sprite_png_4 {
+            get {
+                object obj = ResourceManager.GetObject("heart-sprite-png-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Portal {
             get {
                 object obj = ResourceManager.GetObject("Portal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shield_in_Sonic_Runners {
+            get {
+                object obj = ResourceManager.GetObject("Shield_in_Sonic_Runners", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

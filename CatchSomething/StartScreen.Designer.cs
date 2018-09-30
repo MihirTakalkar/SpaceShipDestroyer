@@ -100,6 +100,7 @@
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartScreen";
             this.Text = "StartScreen";
             this.Load += new System.EventHandler(this.StartScreen_Load);

@@ -100,6 +100,7 @@
             this.Controls.Add(this.RestartButton);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EndScreen";
             this.Text = "EndScreen";
             this.Load += new System.EventHandler(this.EndScreen_Load);
