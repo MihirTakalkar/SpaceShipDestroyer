@@ -143,6 +143,16 @@ namespace CatchSomething.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Shield_in_Sonic_Runners1 {
+            get {
+                object obj = ResourceManager.GetObject("Shield_in_Sonic_Runners1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SpaceShip {
             get {
                 object obj = ResourceManager.GetObject("SpaceShip", resourceCulture);

@@ -38,7 +38,7 @@ namespace CatchSomething
             spaceShipList = new List<SpaceShip>();
             spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, 0, 0, 30));
             powerUpList = new List<Powerup>();
-            powerUpList.Add(new Powerup(Properties.Resources.Shield_in_Sonic_Runners, 0, 0, 30));
+            powerUpList.Add(new Powerup(Properties.Resources.Shield_in_Sonic_Runners1, 0, 0, 30));
             portal = new Portal(Properties.Resources.Portal, 425, 910, 40);
             rand = new Random();
             

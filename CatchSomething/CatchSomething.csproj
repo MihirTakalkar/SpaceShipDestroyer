@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Shield_in_Sonic_Runners.png" />
+    <None Include="Resources\Shield_in_Sonic_Runners2.png" />
     <None Include="Resources\Shield_in_Sonic_Runners1.png" />
     <None Include="Resources\heart-sprite-png-4.png" />
     <Content Include="Resources\Portal.png" />
