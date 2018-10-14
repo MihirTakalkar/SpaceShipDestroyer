@@ -183,6 +183,16 @@ namespace CatchSomething.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap The_Jade_Orb {
+            get {
+                object obj = ResourceManager.GetObject("The_Jade_Orb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wallpaper2you_28630__1_ {
             get {
                 object obj = ResourceManager.GetObject("wallpaper2you_28630__1_", resourceCulture);

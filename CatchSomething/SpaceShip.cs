@@ -34,15 +34,10 @@ namespace CatchSomething
 
         }
 
-        public void Gethitbox()
-        {
-
-        }
 
         public void Draw(Graphics gfx)
         {
-        
-            gfx.DrawImage(picture, x, y);
+           gfx.DrawImage(picture, x, y);
         }
       
     }

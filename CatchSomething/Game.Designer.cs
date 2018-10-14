@@ -33,6 +33,7 @@
             this.Score = new System.Windows.Forms.Label();
             this.ShipSpawn = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.PowerSpawn = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +73,12 @@
             this.label1.Size = new System.Drawing.Size(135, 42);
             this.label1.TabIndex = 3;
             this.label1.Text = "Spaceship\r\nDestroyer";
+            // 
+            // PowerSpawn
+            // 
+            this.PowerSpawn.Enabled = true;
+            this.PowerSpawn.Interval = 10000;
+            this.PowerSpawn.Tick += new System.EventHandler(this.PowerSpawn_Tick);
             // 
             // pictureBox1
             // 
@@ -114,6 +121,7 @@
         private System.Windows.Forms.Label Score;
         private System.Windows.Forms.Timer ShipSpawn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer PowerSpawn;
     }
 }
 

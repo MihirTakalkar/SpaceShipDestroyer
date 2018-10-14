@@ -19,16 +19,14 @@ namespace CatchSomething
         }
 
         Portal portal;
-        SpaceShip spaceship;
-        Powerup powerup;
         Bitmap bitmap;
         Graphics gfx;
-        int score = 0;
         Random rand;
+        Random rando;
         List<SpaceShip> spaceShipList;
         List<Powerup> powerUpList;
-        int maxShips = 10;
         int shipsMissed = 0;
+        int score = 0;
 
 
         private void Game_Load(object sender, EventArgs e)
@@ -38,9 +36,10 @@ namespace CatchSomething
             spaceShipList = new List<SpaceShip>();
             spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, 0, 0, 30));
             powerUpList = new List<Powerup>();
-            powerUpList.Add(new Powerup(Properties.Resources.Shield_in_Sonic_Runners1, 0, 0, 30));
+            powerUpList.Add(new Powerup(Properties.Resources.Shield_in_Sonic_Runners1,0 ,0 , 10));
             portal = new Portal(Properties.Resources.Portal, 425, 910, 40);
             rand = new Random();
+            rando = new Random();
             
         }
 
@@ -54,6 +53,11 @@ namespace CatchSomething
                 ShipSpawn.Interval = ShipSpawn.Interval - (score / 2 + 10);
                 spaceShipList.Add(new SpaceShip(Properties.Resources.SpaceShip, rand.Next(0, 600), 0, 30));
            
+        }
+
+        private void PowerSpawn_Tick(object sender, EventArgs e)
+        {
+           powerUpList.Add(new Powerup(Properties.Resources.Shield_in_Sonic_Runners1, rando.Next(0, 600), 0, 30));
         }
 
         private void DrawTimer_Tick(object sender, EventArgs e)
@@ -78,7 +82,27 @@ namespace CatchSomething
                 }
             
             }
-  
+            for (int i = 0; i < powerUpList.Count; i++)
+            {
+                if (powerUpList[i].hitbox.IntersectsWith(portal.hitbox))
+                {
+                    if (shipsMissed > 0 && shipsMissed < 3)
+                    {
+                        shipsMissed--;
+                    }
+                    powerUpList.Remove(powerUpList[i]);
+                    continue;
+
+                }
+
+                if (powerUpList[i].hitbox.Top > bitmap.Height)
+                {
+                    powerUpList.Remove(powerUpList[i]);
+                }
+
+            }
+
+
             if (shipsMissed >= 3)
             {
                 this.Close();
@@ -111,18 +135,33 @@ namespace CatchSomething
             for (int i = 0; i < spaceShipList.Count; i++)
             {
                 spaceShipList[i].Update();
-                powerUpList[i].Update();
+        
             }
             for (int i = 0; i < spaceShipList.Count ; i++)
             {
                 spaceShipList[i].Draw(gfx);
-                powerUpList[i].Draw(gfx);
+            
             }
                for (int i = 0; i < spaceShipList.Count; i++)
             {
                 spaceShipList[i].Update();
             }
-           
+
+            for (int i = 0; i < powerUpList.Count; i++)
+            {
+                powerUpList[i].Update();
+
+            }
+            for (int i = 0; i < powerUpList.Count; i++)
+            {
+                powerUpList[i].Draw(gfx);
+
+            }
+            for (int i = 0; i < powerUpList.Count; i++)
+            {
+                powerUpList[i].Draw(gfx);
+            }
+
 
             pictureBox1.Image = bitmap;
             
@@ -156,5 +195,6 @@ namespace CatchSomething
             }
         }
 
+    
     }
 }

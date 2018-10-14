@@ -9,7 +9,7 @@ namespace CatchSomething
 {
     class Powerup
     {
-        public Image picture;
+        public Image photo;
         int x;
         int y;
         int width;
@@ -17,9 +17,9 @@ namespace CatchSomething
         int speedy;
         public Rectangle hitbox { get; set; }
 
-        public Powerup(Image picture, int x, int y, int speedy)
+        public Powerup (Image photo, int x, int y, int speedy)
         {
-            this.picture = picture;
+            this.photo = photo;
             this.x = x;
             this.y = y;
             this.speedy = speedy;
@@ -30,21 +30,12 @@ namespace CatchSomething
         public void Update()
         {
             y += speedy;
-            hitbox = new Rectangle(x + 10, y + 10, picture.Width + 20, picture.Height + 20);
-
-        }
-
-        public void Gethitbox()
-        {
-
+            hitbox = new Rectangle(x + 10, y + 10, photo.Width + 20, photo.Height + 20);
         }
 
         public void Draw(Graphics gfx)
         {
-
-            gfx.DrawImage(picture, x, y);
+            gfx.DrawImage(photo, x, y);
         }
-
     }
 }
-
