@@ -12,7 +12,7 @@ namespace CatchSomething
         Image image;
         int x;
         int y;
-        int speedx;
+        public int speedx;
         int width;
         int height;
         public bool Left = false;
